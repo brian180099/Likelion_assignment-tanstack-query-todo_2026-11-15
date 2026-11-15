@@ -209,3 +209,13 @@ h1 {
 .todo-header {
   margin-bottom: 28px;
 }
+.sync-panel { margin-top: 24px; padding: 18px; background: #f5f3ff; border: 1px solid #e8e2ff; border-radius: 12px; }
+.sync-panel label { display: flex; align-items: center; gap: 8px; font-size: 14px; font-weight: 650; }
+.sync-panel input { accent-color: #6d5cdb; width: 17px; height: 17px; }
+.sync-panel p { color: #73788c; font-size: 12px; line-height: 1.7; margin: 10px 0 6px; }
+.sync-panel span { color: #6355ce; font-size: 12px; }
+.feedback { min-height: 20px; font-size: 12px; color: #6355ce; }
+[role="alert"] { color: #b33449; font-size: 14px; }
+button:not(:disabled) { cursor: pointer; }
+button:focus-visible, input:focus-visible { outline: 2px solid #7767e4; outline-offset: 3px; }
+button:disabled { opacity: .6; }
