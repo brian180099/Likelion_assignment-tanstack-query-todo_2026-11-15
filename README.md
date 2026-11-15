@@ -17,11 +17,7 @@ const query = useQuery({
 });
 ```
 
-- `refetchInterval`: 자동 새로고침이 켜져 있고 변경 요청이 없을 때 5초마다 조회합니다. 그 외에는 `false`로 중단합니다.
-- `useIsMutating`: 추가·수정·삭제 처리 중에는 폴링을 일시 정지해 캐시 변경과 충돌하지 않게 합니다.
-- `refetchIntervalInBackground: false`: 백그라운드 탭에서는 주기적 조회를 쉽니다.
-- `refetchOnWindowFocus: false`: 창에 다시 포커스할 때 발생하는 자동 조회를 끕니다.
-- `dataUpdatedAt`과 `isFetching`으로 최근 갱신 시각과 조회 중 상태를 표시합니다.
+
 
 ### Todo 삭제 — `src/api/todo.ts`, `src/hooks/useTodos.ts`
 
@@ -39,9 +35,7 @@ const remove = useMutation({
 });
 ```
 
-진행 중인 조회를 취소한 뒤 `setQueryData`로 삭제한 Todo를 캐시에서 제거합니다. 삭제 성공 후 `invalidateQueries`나 추가 GET 요청 없이 화면에 반영하며, 실패하면 기존 목록을 유지하고 오류를 표시합니다.
 
-완료 상태 변경에는 `onMutate`에서 캐시를 먼저 수정하는 낙관적 업데이트를 적용했습니다. 요청이 실패하면 `onError`에서 백업한 목록으로 복구하고, `onSettled`에서 서버 데이터와 다시 동기화합니다.
 
 화면 스크린샷
 
